@@ -8,10 +8,8 @@ struct Node{
     struct Node *prev;
     struct Node *next;
 };
-//==========================================================
 
 struct Node *head;
-//==========================================================
 
 struct Node *CreateNode(int x){
     struce Node *newNode = (struct Node*) malloc(sizeof(struct Node));
@@ -32,7 +30,7 @@ void insertHead(int x){
     newNode->next = head;
     head = newNode;
 }
-
+//==========================================================
 void insertFoot(int x){
     struct Node *aux = head;
     struct Node *newNode = *CreateNode(x);
@@ -46,12 +44,28 @@ void insertFoot(int x){
     aux->next = newNode;
     newNode->prev = aux;
 }
-
+//==========================================================
 void Print(){
     struct Node *aux = head;
     printf("Forward: ");
-    while(temp != NULL){
+    while(aux != NULL){
         printf("%d\n",aux->data);
         aux = aux->next;
     }
 }
+//==========================================================
+void ReversePrint(){
+    struct Node *aux = head;
+    if(aux == NULL){
+        return 0;
+    }
+    while(aux-> != NULL){
+        aux = aux->next;
+    }
+    printf("Backwords");
+    while(aux != NULL){
+        printf("%d\n",aux->data);
+        aux = aux->prev;
+    }
+}
+//==========================================================
