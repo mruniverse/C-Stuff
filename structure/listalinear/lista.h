@@ -82,8 +82,11 @@ void DeleteNode(int data){
         printf("EMPTY\n");
         return;
     }
-    while(aux->next != NULL || aux->next != data){
+    while(aux->next != NULL || aux->next.data != data){
         aux = aux->next;
+    }
+    if(aux->next == NULL ||){
+
     }
     printf("Found it !\n");
 
