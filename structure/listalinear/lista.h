@@ -2,7 +2,6 @@
 #include <stdlib.h>
 
 //==========================================================
-
 struct Node{
     int data;
     struct Node *prev;
@@ -12,16 +11,16 @@ struct Node{
 struct Node *head;
 
 struct Node *CreateNode(int x){
-    struce Node *newNode = (struct Node*) malloc(sizeof(struct Node));
+    struct Node *newNode = (struct Node*) malloc(sizeof(struct Node));
     newNode->data = x;
     newNode->prev = NULL;
-    newNode->prev = NULL;
+    newNode->next = NULL;
     return newNode;
 };
 //==========================================================
 
 void insertHead(int x){
-    struct Node *newNode = *CreateNode(x);
+    struct Node *newNode = CreateNode(x);
     if(head == NULL){
         head = newNode;
         return;
@@ -33,7 +32,7 @@ void insertHead(int x){
 //==========================================================
 void insertFoot(int x){
     struct Node *aux = head;
-    struct Node *newNode = *CreateNode(x);
+    struct Node *newNode = CreateNode(x);
     if(head == NULL){
         head = newNode;
         return;
@@ -47,7 +46,13 @@ void insertFoot(int x){
 //==========================================================
 void Print(){
     struct Node *aux = head;
-    printf("Forward: ");
+
+    if(head == NULL){
+        printf("EMPTY\n");
+        return;
+    }
+
+    printf("Forward: \n");
     while(aux != NULL){
         printf("%d\n",aux->data);
         aux = aux->next;
@@ -57,15 +62,38 @@ void Print(){
 void ReversePrint(){
     struct Node *aux = head;
     if(aux == NULL){
-        return 0;
+        printf("EMPTY\n");
+        return;
     }
-    while(aux-> != NULL){
+    while(aux->next != NULL){
         aux = aux->next;
     }
-    printf("Backwords");
+    printf("Backwords:\n");
     while(aux != NULL){
         printf("%d\n",aux->data);
         aux = aux->prev;
     }
 }
 //==========================================================
+void DeleteNode(int data){
+    int auxNext,auxPrev;
+    struct Node *aux = head;
+    if(aux == NULL){
+        printf("EMPTY\n");
+        return;
+    }
+    while(aux->next != NULL || aux->next != data){
+        aux = aux->next;
+    }
+    printf("Found it !\n");
+
+    auxNext = aux->next;
+    auxPrev = aux->prev;
+    aux = aux->prev;
+    aux->next = auxNext;
+    aux = aux->next;
+    aux = aux->next;
+    aux->prev = auxPrev;
+
+    printf("Done !\n");
+}
