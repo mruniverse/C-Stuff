@@ -76,27 +76,26 @@ void ReversePrint(){
 }
 //==========================================================
 void DeleteNode(int data){
-    int auxNext,auxPrev;
+    struct Node *auxNext, *auxPrev;
     struct Node *aux = head;
     if(aux == NULL){
         printf("EMPTY\n");
         return;
     }
-    while(aux->next != NULL || aux->next.data != data){
+    while(aux != NULL && aux->data != data){
         aux = aux->next;
     }
-    if(aux->next == NULL ||){
-
-    }
+    // if(aux->next == NULL ||){
+    //
+    // }
     printf("Found it !\n");
+    printf("head: %d\n", aux->data);
 
     auxNext = aux->next;
+    printf("here");
     auxPrev = aux->prev;
-    aux = aux->prev;
-    aux->next = auxNext;
-    aux = aux->next;
-    aux = aux->next;
-    aux->prev = auxPrev;
+    auxNext->prev = auxPrev;
+    auxPrev->next = auxNext;
 
     printf("Done !\n");
 }

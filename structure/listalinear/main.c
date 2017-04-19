@@ -6,6 +6,7 @@ void insertHead(int);
 void insertFoot(int);
 void Print();
 void ReversePrint();
+void DeleteNode(int);
 
 int main(){
     Print();
@@ -15,7 +16,9 @@ int main(){
     insertHead(8);
     insertHead(10);
     insertHead(100);
+    // DeleteNode(10);
     Print();
+    DeleteNode(10);
     ReversePrint();
 
 
