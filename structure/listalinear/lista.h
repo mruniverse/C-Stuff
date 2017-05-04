@@ -18,7 +18,6 @@ struct Node *CreateNode(int x){
     return newNode;
 };
 //==========================================================
-
 void insertHead(int x){
     struct Node *newNode = CreateNode(x);
     if(head == NULL){
@@ -78,24 +77,37 @@ void ReversePrint(){
 void DeleteNode(int data){
     struct Node *auxNext, *auxPrev;
     struct Node *aux = head;
+
     if(aux == NULL){
         printf("EMPTY\n");
         return;
     }
+
     while(aux != NULL && aux->data != data){
         aux = aux->next;
     }
-    // if(aux->next == NULL ||){
-    //
-    // }
-    printf("Found it !\n");
-    printf("head: %d\n", aux->data);
+
+    if(aux == NULL){
+        printf("There's no such thing...\n");
+        return;
+    }
+
+    printf("Found it!\n");
 
     auxNext = aux->next;
-    printf("here");
     auxPrev = aux->prev;
     auxNext->prev = auxPrev;
     auxPrev->next = auxNext;
 
-    printf("Done !\n");
+    printf("Done!\n");
 }
+//==========================================================
+void insertOrderly(int x){
+    struct Node *newNode = CreateNode(x);
+    if(head == NULL){
+        head == newNode;
+        return;
+    }
+
+}
+//==========================================================

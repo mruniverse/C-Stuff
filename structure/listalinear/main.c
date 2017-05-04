@@ -20,6 +20,8 @@ int main(){
     Print();
     DeleteNode(10);
     ReversePrint();
+    DeleteNode(1000);
+    Print();
 
 
     return 0;

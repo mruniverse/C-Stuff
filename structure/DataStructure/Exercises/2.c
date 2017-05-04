@@ -16,15 +16,15 @@ struct lista_circular{
     struct elemento* cabeca;
 };
 
-void inicializaLista(lista_circular*);
+void inicializaLista(struct lista_circular*);
 
 //==============================================================================
-void inicializaLista(lista_circular *l){
+void inicializaLista(struct lista_circular *l){
     l->cabeca = (struct elemento*) malloc(sizeof(struct elemento));
     l->cabeca->prox = l->cabeca;
 }
 //==============================================================================
-int quantidadeElementos(lista_circular *l){
+int quantidadeElementos(struct lista_circular *l){
    struct elemento* aux = l->cabeca->prox;
    int i = 0;
    while(aux != l->cabeca){
