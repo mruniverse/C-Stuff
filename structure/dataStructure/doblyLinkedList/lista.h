@@ -74,7 +74,7 @@ void ReversePrint(){
     }
 }
 //==========================================================
-void DeleteNode(int data){
+void deleteNode(int data){
     struct Node *auxNext, *auxPrev;
     struct Node *aux = head;
 

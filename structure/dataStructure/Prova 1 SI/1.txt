@@ -1,0 +1,6 @@
+1)
+a- Falsa: Toda lista possui a ordem lógica dos elementos (a ordem ‘vista’ pelo usuário) sendo a mesma ordem física (em memória principal)
+b- Falsa: Na estrutura de dados do tipo pilha, todo elemento novo que é inserido torna-se o primeiro elemento da lista.
+c- Falsa: Lista linear ligada, utilizando implementação dinâmica, possui o procedimento de alocação/desalocação de memória  para os registros sob demanda.
+d- Verdadeira: Lista linear ligada duplamente encadeada possui o procedimento de alocação/desalocação de memória para os registros sob demanda.
+e- Falsa: Em uma estrutura de pilha, o último elemento armazenado deve ser o primeiro a ser removido.
